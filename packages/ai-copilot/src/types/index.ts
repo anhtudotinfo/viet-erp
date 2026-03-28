@@ -1,8 +1,18 @@
 // ============================================================
-// @erp/ai-copilot — Type Definitions
+// @erp/ai-copilot — Type Definitions (LIPHOCO Extended)
 // ============================================================
 
-export type CopilotModule = 'hrm' | 'crm' | 'mrp' | 'accounting' | 'otb' | 'pm' | 'tpm' | 'excel-ai' | 'general';
+export type CopilotModule =
+  | 'hrm'
+  | 'crm'
+  | 'mrp'
+  | 'accounting'
+  | 'otb'
+  | 'pm'
+  | 'tpm'
+  | 'excel-ai'
+  | 'costing'      // ← NEW: LIPHOCO Costing module
+  | 'general';
 
 export interface CopilotConfig {
   apiKey: string;
@@ -50,44 +60,17 @@ export interface ToolResult {
 export interface CopilotTool {
   name: string;
   description: string;
-  inputSchema: Record<string, unknown>;
-  execute: (input: Record<string, unknown>, context: ConversationContext) => Promise<string>;
+  inputSchema: {
+    type: 'object';
+    properties: Record<string, unknown>;
+    required?: string[];
+  };
 }
 
-export interface CopilotResponse {
-  message: ChatMessage;
-  suggestedActions?: SuggestedAction[];
-  dataCards?: DataCard[];
-  confidence?: number;
-}
-
-export interface SuggestedAction {
-  label: string;
-  labelVi: string;
-  action: string;      // 'navigate', 'execute', 'query', 'create'
-  payload: Record<string, unknown>;
-  icon?: string;
-}
-
-export interface DataCard {
-  title: string;
-  type: 'metric' | 'table' | 'chart' | 'list' | 'alert';
-  data: unknown;
-  source: string;      // Module that provided the data
-}
-
-export interface ModuleAssistant {
-  module: CopilotModule;
-  systemPrompt: string;
+export interface CopilotModuleDefinition {
+  id: CopilotModule;
+  name: string;
+  description: string;
   tools: CopilotTool[];
-  contextBuilder: (context: ConversationContext) => Promise<string>;
-  intentClassifier?: (message: string) => Promise<string>;
-}
-
-export interface StreamChunk {
-  type: 'text' | 'tool_use' | 'tool_result' | 'done' | 'error';
-  content?: string;
-  toolCall?: ToolCall;
-  toolResult?: ToolResult;
-  error?: string;
+  systemPrompt: string;
 }
