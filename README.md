@@ -16,8 +16,7 @@ VietERP Platform is a comprehensive, enterprise-grade ERP ecosystem built with m
 
 | Chỉ số / Metric | Giá trị / Value |
 |--------|-------|
-| Tổng dòng mã / Total LOC | **253,685** |
-| TypeScript/TSX | 128,578 LOC (7,771 files) |
+| Tổng dòng mã / Total LOC | **812,879** |
 | Ứng dụng / Applications | 14 modules |
 | Gói chia sẻ / Shared Packages | 27 |
 | Prisma Models | 971 |
@@ -28,7 +27,21 @@ VietERP Platform is a comprehensive, enterprise-grade ERP ecosystem built with m
 | Grafana Dashboards | 6 |
 | CI/CD Workflows | 3 (ci, release, docker-push) |
 | Tổng tệp / Total Files | 8,957 |
-| Tài liệu / Documentation | 32 files (ADR, guides, API ref) |
+
+### Phân bổ mã nguồn / Code Breakdown
+
+| Ngôn ngữ / Language | LOC | Ghi chú |
+|---|---|---|
+| TypeScript (.ts) | 363,273 | Mã nguồn chính |
+| React TSX (.tsx) | 161,767 | Giao diện |
+| JavaScript (.js/.jsx) | 27,871 | Config + scripts |
+| CSS / Tailwind | 47,417 | Styles |
+| Prisma Schema | 36,517 | 971 models, 13 schemas |
+| SQL Migrations | 17,402 | 34 migrations |
+| Terraform (.tf) | 6,168 | AWS + GCP + Azure |
+| Shell Scripts | 3,943 | DevOps + automation |
+| JSON / YAML Config | 35,765 | Package configs + Helm + monitoring |
+| Markdown Docs | 112,756 | 32 guides + ADRs + API refs |
 
 ## Độ hoàn thiện / Completion Status
 
