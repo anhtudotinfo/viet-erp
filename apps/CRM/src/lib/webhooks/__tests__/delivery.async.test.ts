@@ -54,9 +54,9 @@ describe('deliverWebhook (async)', () => {
     mockFetch.mockResolvedValue({ status: 200, text: vi.fn().mockResolvedValue('OK') })
     await deliverWebhook(webhook, 'order.created', { orderId: '123' })
     const [, fetchOptions] = mockFetch.mock.calls[0]
-    expect(fetchOptions.headers['X-RtR-Event']).toBe('order.created')
-    expect(fetchOptions.headers['X-RtR-Signature']).toMatch(/^sha256=[a-f0-9]{64}$/)
-    expect(fetchOptions.headers['X-RtR-Delivery']).toBeDefined()
+    expect(fetchOptions.headers['X-VietERP-Event']).toBe('order.created')
+    expect(fetchOptions.headers['X-VietERP-Signature']).toMatch(/^sha256=[a-f0-9]{64}$/)
+    expect(fetchOptions.headers['X-VietERP-Delivery']).toBeDefined()
   })
 
   it('logs delivery to database', async () => {

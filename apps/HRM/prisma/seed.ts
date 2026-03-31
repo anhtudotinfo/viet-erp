@@ -555,7 +555,7 @@ async function main() {
     { key: "companyName", value: "CÔNG TY CỔ PHẦN REAL-TIME ROBOTICS VIỆT NAM" },
     { key: "companyTaxCode", value: "0314718578" },
     { key: "companyAddress", value: "Số 40/10 Khổng Tử, Phường Tăng Nhơn Phú, TP.HCM" },
-    { key: "companyEmail", value: "info@rtrobotics.com" },
+    { key: "companyEmail", value: "info@vierp.com" },
     { key: "companyRepresentative", value: "LƯƠNG VIỆT QUỐC" },
     { key: "companyBankAccount", value: "13610000031054 - BIDV CN Bình Thạnh" },
     { key: "standardWorkDays", value: "26" },

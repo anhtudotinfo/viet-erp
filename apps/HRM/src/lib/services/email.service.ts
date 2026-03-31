@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer"
 
 const RTR_COMPANY = {
-  name: "Công ty TNHH Real-Time Robotics Việt Nam",
+  name: "Công ty TNHH VietERP Việt Nam",
   shortName: "RTR Vietnam",
   address: "Lô E2a-7, Đường D1, Khu CNC, P. Long Thạnh Mỹ, TP. Thủ Đức, TP. HCM",
   phone: "(028) 3636 0099",

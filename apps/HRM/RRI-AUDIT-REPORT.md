@@ -1,5 +1,5 @@
 # RRI COMPREHENSIVE AUDIT REPORT
-## VietERP HRM System — Real-Time Robotics Vietnam
+## VietERP HRM System — VietERP Vietnam
 **Date:** 2026-03-09 | **Methodology:** RRI-T + RRI-UX + RRI-UI Combined
 **Scope:** Full codebase (148 TSX files, 30+ Prisma models, 50+ API routes)
 

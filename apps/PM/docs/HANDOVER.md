@@ -1,4 +1,4 @@
-# RtR Control Tower — Handover Document
+# VietERP Project Manager — Handover Document
 
 **Version**: 1.1.0
 **Date**: 2026-02-25
@@ -8,7 +8,7 @@
 
 ## 1. Project Overview
 
-**RtR Control Tower** is a drone program management dashboard for Real-time Robotics, built to track 5 drone projects across the CONCEPT > EVT > DVT > PVT > MP lifecycle.
+**VietERP Project Manager** is a drone program management dashboard for VietERP, built to track 5 drone projects across the CONCEPT > EVT > DVT > PVT > MP lifecycle.
 
 | Metric | Value |
 |--------|-------|

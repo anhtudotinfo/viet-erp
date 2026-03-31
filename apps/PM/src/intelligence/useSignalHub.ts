@@ -9,7 +9,7 @@ import type { ConvergenceAlert } from './kernel/convergence';
 import type { AnomalyResult } from './kernel/anomaly';
 import type { IndexScore } from './kernel/scoring';
 import type { FreshnessSummary } from './kernel/freshness';
-import { RTR_CONFIG } from './rtr-config';
+import { RTR_CONFIG } from './pm-config';
 import {
   issueToSignal,
   gateToggleToSignal,

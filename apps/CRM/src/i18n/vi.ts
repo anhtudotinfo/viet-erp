@@ -1,7 +1,7 @@
 const vi = {
   // App Branding
-  'app.name': 'RtR CRM',
-  'app.company': 'Real-time Robotics',
+  'app.name': 'VietERP CRM',
+  'app.company': 'VietERP',
   'app.tagline': 'Quản Lý Quan Hệ Khách Hàng Cấp Quốc Phòng',
 
   // Navigation

@@ -5,7 +5,7 @@ const RTR_ONBOARDING_TASKS = [
   {
     taskKey: "COMPANY_EMAIL",
     title: "Tạo email công ty",
-    description: "Tạo tài khoản email @rtrobotics.com cho nhân viên",
+    description: "Tạo tài khoản email @vierp.com cho nhân viên",
     dueDays: 1,
   },
   {

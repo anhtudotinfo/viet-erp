@@ -1,10 +1,10 @@
-# RtR-HRM — Hệ thống Quản lý Nhân sự
+# VietERP-HRM — Hệ thống Quản lý Nhân sự
 
-Ứng dụng quản lý nhân sự toàn diện cho Công ty CP Real-Time Robotics Việt Nam, bao quát toàn bộ vòng đời nhân viên từ tuyển dụng đến nghỉ việc.
+Ứng dụng quản lý nhân sự toàn diện cho Công ty CP VietERP Việt Nam, bao quát toàn bộ vòng đời nhân viên từ tuyển dụng đến nghỉ việc.
 
 ## Tổng quan
 
-RtR-HRM là hệ thống HRM nội bộ với phân quyền 6 vai trò (RBAC), tích hợp AI Copilot hỗ trợ nghiệp vụ HR. Hệ thống xử lý tuyển dụng, hợp đồng, chấm công, tính lương (thuế TNCN Việt Nam), KPI, đánh giá hiệu suất và xuất tài liệu tự động.
+VietERP-HRM là hệ thống HRM nội bộ với phân quyền 6 vai trò (RBAC), tích hợp AI Copilot hỗ trợ nghiệp vụ HR. Hệ thống xử lý tuyển dụng, hợp đồng, chấm công, tính lương (thuế TNCN Việt Nam), KPI, đánh giá hiệu suất và xuất tài liệu tự động.
 
 ## Công nghệ
 
@@ -76,7 +76,7 @@ prisma/
 
 | Email | Vai trò |
 |-------|---------|
-| `admin@rtrobotics.com` | Super Admin |
+| `admin@vierp.com` | Super Admin |
 
 > Đổi mật khẩu ngay sau lần đăng nhập đầu tiên.
 
@@ -86,4 +86,4 @@ Hướng dẫn triển khai chi tiết (cấu hình server, Nginx, backup, bảo
 
 ## Giấy phép
 
-Private — Chỉ sử dụng nội bộ tại Real-Time Robotics Việt Nam.
+Private — Chỉ sử dụng nội bộ tại VietERP Việt Nam.

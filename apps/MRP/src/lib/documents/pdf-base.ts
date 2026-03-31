@@ -12,7 +12,7 @@ export { jsPDF, autoTable };
 
 // Company info
 const COMPANY = {
-  name: 'Real-time Robotics, Inc.',
+  name: 'VietERP, Inc.',
   address: 'Ho Chi Minh City, Vietnam',
   phone: '+84 (0) 28 1234 5678',
   email: 'info@your-domain.com',

@@ -58,7 +58,7 @@ import { PHASES, PHASE_COLORS, STATUS_LIST, STATUS_COLORS, SEV_LIST, SEV_COLORS,
 const normalizeVN = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').toLowerCase();
 
 // ===================================================================
-// RtR CONTROL TOWER V1 — Full Interactive Prototype
+// VietERP CONTROL TOWER V1 — Full Interactive Prototype
 // Based on Vibecode Kit v5.0 Blueprint
 // 3 Core Modules: Dashboard, Issues, Phase & Gates
 // All icons: Lucide React
@@ -67,8 +67,8 @@ const normalizeVN = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').re
 // --- i18n ---
 const LANG = {
   vi: {
-    appName: "RtR Control Tower",
-    appSub: "Real-time Robotics • Qu\u1EA3n l\u00FD D\u1EF1 \u00E1n Drone",
+    appName: "VietERP Project Manager",
+    appSub: "VietERP • Qu\u1EA3n l\u00FD D\u1EF1 \u00E1n Drone",
     tabs: { tower: "B\u1EA3ng \u0110i\u1EC1u Khi\u1EC3n", issues: "V\u1EA5n \u0110\u1EC1", gates: "C\u1ED5ng Phase", impact: "B\u1EA3n \u0110\u1ED3 \u1EA2nh H\u01B0\u1EDFng", team: "\u0110\u1ED9i Ng\u0169", review: "Duy\u1EC7t", audit: "Nh\u1EADt K\u00FD", bom: "BOM & NCC", testing: "Test & Q\u0110", orders: "\u0110\u01A1n H\u00E0ng", production: "S\u1EA3n Xu\u1EA5t", inventory: "T\u1ED3n Kho", finance: "T\u00E0i Ch\u00EDnh", intelligence: "Tr\u00ED Tu\u1EC7", settings: "C\u00E0i \u0110\u1EB7t" },
     importExport: { import: "Nh\u1EADp", export: "Xu\u1EA5t", exportExcel: "Xu\u1EA5t Excel", exportPdf: "Xu\u1EA5t PDF", exportSlides: "Slide T\u1ED5ng Quan", importData: "Nh\u1EADp D\u1EEF Li\u1EC7u" },
     email: { preferences: "C\u00E0i \u0111\u1EB7t Email", eventType: "Lo\u1EA1i s\u1EF1 ki\u1EC7n", emailNotif: "Email", inApp: "Trong \u1EE9ng d\u1EE5ng", frequency: "T\u1EA7n su\u1EA5t", save: "L\u01B0u c\u00E0i \u0111\u1EB7t", preview: "Xem tr\u01B0\u1EDBc", realtime: "Th\u1EDDi gian th\u1EF1c", daily: "H\u00E0ng ng\u00E0y", weekly: "H\u00E0ng tu\u1EA7n" },
@@ -96,8 +96,8 @@ const LANG = {
     intel: { title: "Tr\u00ED tu\u1EC7 D\u1EF1 \u00E1n", overview: "T\u1ED5ng quan", convergence: "H\u1ED9i t\u1EE5", anomaly: "B\u1EA5t th\u01B0\u1EDDng", freshness: "\u0110\u1ED9 t\u01B0\u01A1i", signals: "t\u00EDn hi\u1EC7u", signalTypes: "lo\u1EA1i", events: "s\u1EF1 ki\u1EC7n", signalCount: "T\u00EDn hi\u1EC7u", convergenceCount: "H\u1ED9i t\u1EE5", anomalyCount: "B\u1EA5t th\u01B0\u1EDDng", dataFreshness: "\u0110\u1ED9 t\u01B0\u01A1i", projectHealth: "S\u1EE9c kh\u1ECFe D\u1EF1 \u00E1n (PHI)", recentConvergences: "H\u1ED9i t\u1EE5 g\u1EA7n \u0111\u00E2y", noConvergences: "Kh\u00F4ng ph\u00E1t hi\u1EC7n h\u1ED9i t\u1EE5", noConvergencesSub: "H\u1EC7 th\u1ED1ng s\u1EBD c\u1EA3nh b\u00E1o khi nhi\u1EC1u t\u00EDn hi\u1EC7u xu\u1EA5t hi\u1EC7n c\u00F9ng l\u00FAc", noAnomalies: "Kh\u00F4ng c\u00F3 b\u1EA5t th\u01B0\u1EDDng", noAnomaliesSub: "C\u1EA7n th\u00EAm d\u1EEF li\u1EC7u baseline", observed: "Th\u1EF1c t\u1EBF", expected: "D\u1EF1 ki\u1EBFn", contributingSignals: "T\u00EDn hi\u1EC7u \u0111\u00F3ng g\u00F3p", freshSources: "T\u01B0\u01A1i", staleSources: "C\u0169", errorSources: "L\u1ED7i", coverage: "Ph\u1EE7", degradedDecisions: "Quy\u1EBFt \u0111\u1ECBnh suy gi\u1EA3m", modifiersActive: "Modifier \u0111ang ho\u1EA1t \u0111\u1ED9ng", levels: { healthy: "Kh\u1ECFe", attention: "Ch\u00FA \u00FD", warning: "C\u1EA3nh b\u00E1o", critical: "Nghi\u00EAm tr\u1ECDng", unknown: "Ch\u01B0a r\u00F5" }, convergenceDetected: "Ph\u00E1t hi\u1EC7n h\u1ED9i t\u1EE5", anomalyDetected: "Ph\u00E1t hi\u1EC7n b\u1EA5t th\u01B0\u1EDDng", healthCritical: "S\u1EE9c kh\u1ECFe nghi\u00EAm tr\u1ECDng" },
   },
   en: {
-    appName: "RtR Control Tower",
-    appSub: "Real-time Robotics • Drone Program Management",
+    appName: "VietERP Project Manager",
+    appSub: "VietERP • Drone Program Management",
     tabs: { tower: "Control Tower", issues: "Issues", gates: "Phase Gates", impact: "Impact Map", team: "Team", review: "Review", audit: "Audit Log", bom: "BOM & Suppliers", testing: "Testing & Decisions", orders: "Orders", production: "Production", inventory: "Inventory", finance: "Finance", intelligence: "Intelligence", settings: "Settings" },
     importExport: { import: "Import", export: "Export", exportExcel: "Export Excel", exportPdf: "Export PDF", exportSlides: "Executive Slides", importData: "Import Data" },
     email: { preferences: "Email Preferences", eventType: "Event Type", emailNotif: "Email", inApp: "In-App", frequency: "Frequency", save: "Save Preferences", preview: "Preview", realtime: "Realtime", daily: "Daily Digest", weekly: "Weekly" },
@@ -2103,7 +2103,7 @@ export default function App() {
 
       {/* === FOOTER === */}
       <div style={{ borderTop: "1px solid var(--border)", padding: "6px 20px", display: "flex", justifyContent: "space-between", fontSize: 11, color: "var(--text-dim)", fontWeight: 500, background: "var(--bg-card)", marginTop: "auto" }}>
-        <span>RtR Control Tower V1 • Vibecode Kit v5.0 • Real-time Robotics © 2026</span>
+        <span>VietERP Project Manager V1 • Vibecode Kit v5.0 • VietERP © 2026</span>
         <span>Built for: 50+ users • 4 roles • Bilingual Vi-En • 5-phase lifecycle</span>
       </div>
     </div>

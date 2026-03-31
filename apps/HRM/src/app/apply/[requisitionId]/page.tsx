@@ -224,7 +224,7 @@ export default function PublicApplyPage() {
         </Card>
 
         <p className="text-center text-xs text-slate-400">
-          &copy; {new Date().getFullYear()} Real-Time Robotics Vietnam
+          &copy; {new Date().getFullYear()} VietERP Vietnam
         </p>
       </div>
     </div>

@@ -1,6 +1,6 @@
 # Deploy ứng dụng lên VPS RTR — Hướng dẫn từng bước
 
-> Ghi lại đúng quy trình đã thực hiện khi deploy RtR-HRM lên VPS.
+> Ghi lại đúng quy trình đã thực hiện khi deploy VietERP-HRM lên VPS.
 > Lần sau deploy app mới, làm lại từ đầu theo thứ tự này.
 
 ---
@@ -195,16 +195,16 @@ ssh lam@171.244.40.23
 
 # Clone
 cd ~
-git clone git@github.com:Real-Time-Robotics/RtR-HRM.git rtr-hrm
+git clone git@github.com:Real-Time-Robotics/VietERP-HRM.git rtr-hrm
 cd rtr-hrm
 
 # Tạo .env (chỉnh theo app)
 cat > .env << 'EOF'
 DATABASE_URL="postgresql://rtr_hrm:rtr_hrm_secret@db:5432/rtr_hrm"
 NEXTAUTH_SECRET="<openssl rand -base64 32>"
-NEXTAUTH_URL="https://hrm.rtrobotics.com"
+NEXTAUTH_URL="https://hrm.vierp.com"
 AUTH_SECRET="<openssl rand -base64 32>"
-NEXT_PUBLIC_APP_URL="https://hrm.rtrobotics.com"
+NEXT_PUBLIC_APP_URL="https://hrm.vierp.com"
 NEXT_PUBLIC_SHOW_DEMO="false"
 CRON_SECRET="<openssl rand -hex 32>"
 RENDER_DISK_PATH="/data"
@@ -212,7 +212,7 @@ SMTP_HOST=""
 SMTP_PORT="587"
 SMTP_USER=""
 SMTP_PASS=""
-SMTP_FROM="VietERP HRM <hrm@rtrobotics.com>"
+SMTP_FROM="VietERP HRM <hrm@vierp.com>"
 ANTHROPIC_API_KEY=""
 EOF
 ```
@@ -279,8 +279,8 @@ const prisma = new PrismaClient({ adapter });
 async function main() {
   const pw = await bcrypt.hash('RTR@Admin2026!', 10);
   const admin = await prisma.user.upsert({
-    where: { email: 'admin@rtrobotics.com' },
-    create: { email: 'admin@rtrobotics.com', password: pw, name: 'Admin RTR', role: 'SUPER_ADMIN' },
+    where: { email: 'admin@vierp.com' },
+    create: { email: 'admin@vierp.com', password: pw, name: 'Admin RTR', role: 'SUPER_ADMIN' },
     update: {}
   });
   console.log('Admin seeded:', admin.email, admin.role);
@@ -289,7 +289,7 @@ async function main() {
 main().catch(console.error).finally(() => prisma.\$disconnect());
 "
 
-# → "Admin seeded: admin@rtrobotics.com SUPER_ADMIN"
+# → "Admin seeded: admin@vierp.com SUPER_ADMIN"
 ```
 
 ---
@@ -302,8 +302,8 @@ Caddy chạy trong Docker container `caddy`, config tại `/home/hung/caddy/conf
 # Thêm site mới vào Caddyfile
 echo 'rty!@#fgh$%^' | sudo -S bash -c 'cat >> /home/hung/caddy/conf/Caddyfile << "EOF"
 
-hrm.rtrobotics.com {
-    tls software@rtrobotics.com
+hrm.vierp.com {
+    tls software@vierp.com
     reverse_proxy rtr-hrm:3000 {
         header_up X-Real-IP {http.request.header.CF-Connecting-IP}
         header_up X-Forwarded-For {http.request.header.CF-Connecting-IP}
@@ -320,10 +320,10 @@ docker exec caddy caddy reload --config /etc/caddy/Caddyfile
 ## 8. Trỏ DNS và kiểm tra
 
 1. Vào DNS provider (Cloudflare, etc.)
-2. Thêm A record: `hrm.rtrobotics.com` → `171.244.40.23`
+2. Thêm A record: `hrm.vierp.com` → `171.244.40.23`
 3. Đợi DNS propagate (~1-5 phút)
-4. Truy cập `https://hrm.rtrobotics.com`
-5. Đăng nhập: `admin@rtrobotics.com` / `RTR@Admin2026!`
+4. Truy cập `https://hrm.vierp.com`
+5. Đăng nhập: `admin@vierp.com` / `RTR@Admin2026!`
 
 ### Kiểm tra health
 
@@ -337,12 +337,12 @@ curl -s http://localhost:3000/api/health
 
 ## 9. Đăng nhập hệ thống
 
-Truy cập `https://hrm.rtrobotics.com` → trang đăng nhập sẽ hiển thị.
+Truy cập `https://hrm.vierp.com` → trang đăng nhập sẽ hiển thị.
 
 | Thông tin | Giá trị |
 |-----------|---------|
-| URL | `https://hrm.rtrobotics.com` |
-| Email | `admin@rtrobotics.com` |
+| URL | `https://hrm.vierp.com` |
+| Email | `admin@vierp.com` |
 | Mật khẩu | `RTR@Admin2026!` |
 | Vai trò | `SUPER_ADMIN` |
 
@@ -377,17 +377,17 @@ docker run --rm --network rtr-hrm_internal \
 | Docker | v28 + Compose v2 |
 | Caddy container | `caddy` trên network `caddy` |
 | Caddyfile | `/home/hung/caddy/conf/Caddyfile` |
-| TLS email | `software@rtrobotics.com` |
+| TLS email | `software@vierp.com` |
 
 ## Apps đang chạy trên server
 
 | App | Container | Domain |
 |-----|-----------|--------|
-| HRM | `rtr-hrm` + `rtr-hrm-db` | `hrm.rtrobotics.com` |
-| MRP | `vierp-mrp` + `vierp-mrp-db` + `vierp-mrp-redis` | `mrp.rtrobotics.com` |
-| Website | `rtr-website` | `web.rtrobotics.com` |
-| Supabase | `supabase-*` | `supabase.rtrobotics.com` |
-| SRS Streaming | `rtr-srs` | `streaming.rtrobotics.com` |
+| HRM | `rtr-hrm` + `rtr-hrm-db` | `hrm.vierp.com` |
+| MRP | `vierp-mrp` + `vierp-mrp-db` + `vierp-mrp-redis` | `mrp.vierp.com` |
+| Website | `rtr-website` | `web.vierp.com` |
+| Supabase | `supabase-*` | `supabase.vierp.com` |
+| SRS Streaming | `rtr-srs` | `streaming.vierp.com` |
 | RustDesk | `hbbs` + `hbbr` | — |
 
 ## Lệnh hữu ích

@@ -1,6 +1,6 @@
 /**
- * RtR Data → Signal Transformers
- * Convert existing RtR mock data into SignalHub signals
+ * VietERP Data → Signal Transformers
+ * Convert existing VietERP mock data into SignalHub signals
  */
 
 import type { SignalInput } from './kernel/signal';

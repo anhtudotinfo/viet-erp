@@ -1,5 +1,5 @@
 /**
- * RtR Control Tower — Domain Configuration for SignalHub Kernel
+ * VietERP Project Manager — Domain Configuration for SignalHub Kernel
  * 6 signal types, 8 classification rules, 2 convergence spaces, PHI scoring
  */
 
@@ -10,8 +10,8 @@ const DAY = 24 * HOUR;
 
 export const RTR_CONFIG: DomainConfig = {
   id: 'rtr-pm',
-  name: 'RtR Project Management',
-  description: 'Intelligence layer for RtR Control Tower — drone hardware development tracking',
+  name: 'VietERP Project Management',
+  description: 'Intelligence layer for VietERP Project Manager — drone hardware development tracking',
   version: '1.0.0',
 
   // ── Data Sources (client-side, no adapters) ──

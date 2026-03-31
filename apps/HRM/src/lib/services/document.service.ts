@@ -11,7 +11,7 @@ const RTR = {
   address: "Số 40/10 Khổng Tử, Phường Tăng Nhơn Phú, TP. Hồ Chí Minh",
   ceo:     "LƯƠNG VIỆT QUỐC",
   phone:   "0969 864 578",
-  email:   "info@rtrobotics.com",
+  email:   "info@vierp.com",
   bank:    "13610000031054 – NHTMCP Đầu tư và Phát triển VN – CN Bình Thạnh",
 }
 

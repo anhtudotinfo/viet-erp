@@ -1,7 +1,7 @@
 // Barrel export for intelligence module
 export { useSignalHub } from './useSignalHub';
 export type { IntelligenceState } from './useSignalHub';
-export { RTR_CONFIG } from './rtr-config';
+export { RTR_CONFIG } from './pm-config';
 export {
   issueToSignal,
   gateToggleToSignal,

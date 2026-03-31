@@ -1,5 +1,5 @@
 // ===================================================================
-// RtR CONTROL TOWER V3 — Universal Import Wizard
+// VietERP CONTROL TOWER V3 — Universal Import Wizard
 // 5-step modal: Select → Upload → Map → Preview → Import
 // ===================================================================
 import { useState, useCallback, useRef, useMemo } from "react";

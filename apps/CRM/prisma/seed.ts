@@ -26,7 +26,7 @@ async function getOrCreateSeedUsers() {
       data: {
         id: adminId,
         email: 'admin@your-domain.com',
-        name: 'Admin RtR',
+        name: 'Admin VietERP',
         role: 'ADMIN',
       },
     })
@@ -43,7 +43,7 @@ async function getOrCreateSeedUsers() {
       data: {
         id: memberId,
         email: 'member@your-domain.com',
-        name: 'Member RtR',
+        name: 'Member VietERP',
         role: 'MEMBER',
       },
     })
@@ -249,11 +249,11 @@ async function main() {
 
   // Products
   const products = await Promise.all([
-    prisma.product.create({ data: { name: 'RtR Enterprise - MRP', sku: 'VietERP MRP-001', unitPrice: 500000000, category: 'SOFTWARE', description: 'Module quản lý sản xuất' } }),
-    prisma.product.create({ data: { name: 'RtR Enterprise - HRM', sku: 'VietERP HRM-001', unitPrice: 350000000, category: 'SOFTWARE', description: 'Module quản lý nhân sự' } }),
-    prisma.product.create({ data: { name: 'RtR Enterprise - OTB', sku: 'RTR-OTB-001', unitPrice: 400000000, category: 'SOFTWARE', description: 'Module Open-to-Buy' } }),
-    prisma.product.create({ data: { name: 'RtR Enterprise - CRM', sku: 'VietERP CRM-001', unitPrice: 450000000, category: 'SOFTWARE', description: 'Module quản lý khách hàng' } }),
-    prisma.product.create({ data: { name: 'RtR Sheets', sku: 'RTR-SHEETS-001', unitPrice: 200000000, category: 'SOFTWARE', description: 'Bảng tính AI' } }),
+    prisma.product.create({ data: { name: 'VietERP Enterprise - MRP', sku: 'VietERP MRP-001', unitPrice: 500000000, category: 'SOFTWARE', description: 'Module quản lý sản xuất' } }),
+    prisma.product.create({ data: { name: 'VietERP Enterprise - HRM', sku: 'VietERP HRM-001', unitPrice: 350000000, category: 'SOFTWARE', description: 'Module quản lý nhân sự' } }),
+    prisma.product.create({ data: { name: 'VietERP Enterprise - OTB', sku: 'RTR-OTB-001', unitPrice: 400000000, category: 'SOFTWARE', description: 'Module Open-to-Buy' } }),
+    prisma.product.create({ data: { name: 'VietERP Enterprise - CRM', sku: 'VietERP CRM-001', unitPrice: 450000000, category: 'SOFTWARE', description: 'Module quản lý khách hàng' } }),
+    prisma.product.create({ data: { name: 'VietERP Sheets', sku: 'RTR-SHEETS-001', unitPrice: 200000000, category: 'SOFTWARE', description: 'Bảng tính AI' } }),
     prisma.product.create({ data: { name: 'Tùy chỉnh & Tích hợp', sku: 'RTR-CUSTOM-001', unitPrice: 100000000, unit: 'giờ', category: 'MAINTENANCE', description: 'Dịch vụ tùy chỉnh' } }),
   ])
 
@@ -300,7 +300,7 @@ async function main() {
     })
   }
 
-  // ── Seed RtR Drone Products ──────────────────────────────────────
+  // ── Seed VietERP Drone Products ──────────────────────────────────────
   const droneProducts = await Promise.all([
     prisma.product.upsert({ where: { sku: 'RTR-HERA-BASE' }, update: {}, create: { name: 'Hera Base Drone', sku: 'RTR-HERA-BASE', unitPrice: 18000, currency: 'USD', category: 'DRONE', description: 'Hera multi-rotor drone platform' } }),
     prisma.product.upsert({ where: { sku: 'RTR-VS-DUAL' }, update: {}, create: { name: 'VianSight Dual Cam', sku: 'RTR-VS-DUAL', unitPrice: 4500, currency: 'USD', category: 'PAYLOAD', description: 'Dual camera payload with thermal + RGB' } }),

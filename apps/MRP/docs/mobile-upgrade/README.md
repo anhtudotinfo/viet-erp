@@ -191,4 +191,4 @@ Khi hoàn thành, hệ thống phải có:
 
 ---
 
-🏭 **Real-time Robotics - VietERP MRP**
+🏭 **VietERP - VietERP MRP**

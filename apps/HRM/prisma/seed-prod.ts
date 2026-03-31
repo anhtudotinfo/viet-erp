@@ -8,9 +8,9 @@ async function main() {
   const rawPassword = process.env.SEED_ADMIN_PASSWORD || "RTR@Admin2026!"
   const adminPassword = await bcrypt.hash(rawPassword, 10)
   const admin = await prisma.user.upsert({
-    where: { email: "admin@rtrobotics.com" },
+    where: { email: "admin@vierp.com" },
     create: {
-      email: "admin@rtrobotics.com",
+      email: "admin@vierp.com",
       password: adminPassword,
       name: "Admin RTR",
       role: "SUPER_ADMIN",
@@ -29,7 +29,7 @@ async function main() {
     { key: "companyName", value: "CÔNG TY CỔ PHẦN REAL-TIME ROBOTICS VIỆT NAM" },
     { key: "companyTaxCode", value: "0314718578" },
     { key: "companyAddress", value: "Số 40/10 Khổng Tử, P. Tăng Nhơn Phú, TP.HCM" },
-    { key: "companyEmail", value: "info@rtrobotics.com" },
+    { key: "companyEmail", value: "info@vierp.com" },
     { key: "companyRepresentative", value: "LƯƠNG VIỆT QUỐC" },
     { key: "companyInsuranceCode", value: "" },
     { key: "companyTaxAgency", value: "" },
@@ -61,7 +61,7 @@ async function main() {
   }
 
   console.log("✅ Production seed complete")
-  console.log("📧 Admin user: admin@rtrobotics.com")
+  console.log("📧 Admin user: admin@vierp.com")
   console.log("🔑 Password: set via SEED_ADMIN_PASSWORD env var or default (check seed-prod.ts)")
   console.log("⚠️  ĐỔI MẬT KHẨU NGAY SAU KHI LOGIN!")
 }

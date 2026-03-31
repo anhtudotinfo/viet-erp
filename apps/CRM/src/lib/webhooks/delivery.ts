@@ -42,9 +42,9 @@ export async function deliverWebhook(
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-RtR-Signature': `sha256=${signature}`,
-        'X-RtR-Event': event,
-        'X-RtR-Delivery': deliveryId,
+        'X-VietERP-Signature': `sha256=${signature}`,
+        'X-VietERP-Event': event,
+        'X-VietERP-Delivery': deliveryId,
         'User-Agent': 'VietERP-CRM-Webhook/1.0',
       },
       body,

@@ -34,8 +34,8 @@ export default function CTASection() {
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-[13px] text-text-tertiary">
-              <a href="mailto:lam.nguyen@rtrobotics.me" className="flex items-center gap-2 hover:text-text-secondary transition-colors">
-                <Mail size={14} /> lam.nguyen@rtrobotics.me
+              <a href="mailto:lam.nguyen@vierp.dev" className="flex items-center gap-2 hover:text-text-secondary transition-colors">
+                <Mail size={14} /> lam.nguyen@vierp.dev
               </a>
               <span className="hidden sm:block text-border">|</span>
               <span>MIT License | 100% Open Source</span>

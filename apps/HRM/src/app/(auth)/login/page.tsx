@@ -24,7 +24,7 @@ const DEMO_PASSWORD = process.env.NEXT_PUBLIC_DEMO_PASSWORD || ""
 
 export default function LoginPage() {
   const router = useRouter()
-  const [email, setEmail] = useState("admin@rtrobotics.com")
+  const [email, setEmail] = useState("admin@vierp.com")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
@@ -100,7 +100,7 @@ export default function LoginPage() {
               Nhân sự
             </h1>
             <p className="text-white/60 mt-3 text-sm leading-relaxed max-w-[320px]">
-              Quản lý toàn diện thông tin nhân viên, hợp đồng, chấm công và lương thưởng cho Real-Time Robotics Vietnam.
+              Quản lý toàn diện thông tin nhân viên, hợp đồng, chấm công và lương thưởng cho VietERP Vietnam.
             </p>
           </div>
 
@@ -120,7 +120,7 @@ export default function LoginPage() {
 
         <div className="relative z-10">
           <p className="text-white/30 text-xs">
-            &copy; {new Date().getFullYear()} Real-Time Robotics Vietnam. All rights reserved.
+            &copy; {new Date().getFullYear()} VietERP Vietnam. All rights reserved.
           </p>
         </div>
       </div>
@@ -143,7 +143,7 @@ export default function LoginPage() {
             </div>
             <div>
               <p className="font-bold text-slate-900 text-lg leading-none">VietERP HRM</p>
-              <p className="text-slate-500 text-xs">Real-Time Robotics Vietnam</p>
+              <p className="text-slate-500 text-xs">VietERP Vietnam</p>
             </div>
           </div>
 

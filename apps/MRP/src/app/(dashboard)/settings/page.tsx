@@ -61,7 +61,7 @@ export default async function SettingsPage() {
             <div className="space-y-4">
               <div>
                 <p className="text-sm text-muted-foreground">Company Name</p>
-                <p className="font-medium">Real-time Robotics (RtR)</p>
+                <p className="font-medium">VietERP (VietERP)</p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Industry</p>

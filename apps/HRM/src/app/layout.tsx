@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: "VietERP HRM",
     template: "%s | VietERP HRM",
   },
-  description: "Real-Time Robotics Vietnam - Human Resource Management",
+  description: "VietERP Vietnam - Human Resource Management",
 }
 
 export default function RootLayout({

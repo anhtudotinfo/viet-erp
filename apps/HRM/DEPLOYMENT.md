@@ -1,6 +1,6 @@
-# HƯỚNG DẪN TRIỂN KHAI (DEPLOYMENT GUIDE) — RtR-HRM
+# HƯỚNG DẪN TRIỂN KHAI (DEPLOYMENT GUIDE) — VietERP-HRM
 
-> Tài liệu dành cho phòng IT — Triển khai hệ thống Quản lý Nhân sự RtR-HRM lên môi trường production.
+> Tài liệu dành cho phòng IT — Triển khai hệ thống Quản lý Nhân sự VietERP-HRM lên môi trường production.
 
 ---
 
@@ -26,7 +26,7 @@
 
 ## 1. Tổng quan ứng dụng
 
-**RtR-HRM** là hệ thống Quản lý Nhân sự (Human Resource Management) được phát triển cho Công ty Cổ phần Real-Time Robotics Việt Nam.
+**VietERP-HRM** là hệ thống Quản lý Nhân sự (Human Resource Management) được phát triển cho Công ty Cổ phần VietERP Việt Nam.
 
 ### Tech Stack
 
@@ -177,9 +177,9 @@ DATABASE_URL="postgresql://rtr_user:MatKhauManh123@localhost:5432/rtr_hrm?schema
 NEXTAUTH_SECRET="thay-bang-gia-tri-tu-lenh-openssl-rand"
 
 # URL gốc của ứng dụng (dùng cho NextAuth callback)
-# Production: https://hrm.rtrobotics.com
-# Staging: https://hrm-staging.rtrobotics.com
-NEXTAUTH_URL="https://hrm.rtrobotics.com"
+# Production: https://hrm.vierp.com
+# Staging: https://hrm-staging.vierp.com
+NEXTAUTH_URL="https://hrm.vierp.com"
 
 # Secret key để xác thực cron job requests
 # Tạo bằng lệnh: openssl rand -hex 32
@@ -202,13 +202,13 @@ ANTHROPIC_API_KEY="sk-ant-xxxx"
 # Nếu không cấu hình: các chức năng gửi email sẽ không hoạt động
 SMTP_HOST="smtp.gmail.com"
 SMTP_PORT="587"
-SMTP_USER="hrm@rtrobotics.com"
+SMTP_USER="hrm@vierp.com"
 SMTP_PASS="app-password-cua-email"
-SMTP_FROM="HRM RTR <hrm@rtrobotics.com>"
+SMTP_FROM="HRM RTR <hrm@vierp.com>"
 
 # URL công khai của ứng dụng (dùng trong email, link chia sẻ)
 # Thường trùng với NEXTAUTH_URL
-NEXT_PUBLIC_APP_URL="https://hrm.rtrobotics.com"
+NEXT_PUBLIC_APP_URL="https://hrm.vierp.com"
 
 # Mật khẩu cho tài khoản admin khi seed database
 # Nếu không đặt, mật khẩu mặc định sẽ được sử dụng (xem seed-prod.ts)
@@ -222,15 +222,15 @@ SEED_ADMIN_PASSWORD="MatKhauAdmin@Manh2026!"
 |------|----------|-------|-------|
 | `DATABASE_URL` | **BẮT BUỘC** | Connection string PostgreSQL | `postgresql://user:pass@localhost:5432/rtr_hrm` |
 | `NEXTAUTH_SECRET` | **BẮT BUỘC** | Secret key mã hóa session (>= 32 ký tự) | Tạo bằng `openssl rand -base64 32` |
-| `NEXTAUTH_URL` | **BẮT BUỘC** | URL gốc ứng dụng cho NextAuth callback | `https://hrm.rtrobotics.com` |
+| `NEXTAUTH_URL` | **BẮT BUỘC** | URL gốc ứng dụng cho NextAuth callback | `https://hrm.vierp.com` |
 | `CRON_SECRET` | **BẮT BUỘC** | Secret xác thực cron job requests | Tạo bằng `openssl rand -hex 32` |
 | `ANTHROPIC_API_KEY` | Tùy chọn | API Key Anthropic cho AI Copilot HR | `sk-ant-api03-xxxx` |
 | `SMTP_HOST` | Tùy chọn | Địa chỉ SMTP server | `smtp.gmail.com` |
 | `SMTP_PORT` | Tùy chọn | Cổng SMTP | `587` |
-| `SMTP_USER` | Tùy chọn | Tài khoản SMTP | `hrm@rtrobotics.com` |
+| `SMTP_USER` | Tùy chọn | Tài khoản SMTP | `hrm@vierp.com` |
 | `SMTP_PASS` | Tùy chọn | Mật khẩu SMTP (App Password) | `xxxx-xxxx-xxxx-xxxx` |
-| `SMTP_FROM` | Tùy chọn | Tên + email người gửi | `HRM RTR <hrm@rtrobotics.com>` |
-| `NEXT_PUBLIC_APP_URL` | Tùy chọn | URL công khai (dùng trong email) | `https://hrm.rtrobotics.com` |
+| `SMTP_FROM` | Tùy chọn | Tên + email người gửi | `HRM RTR <hrm@vierp.com>` |
+| `NEXT_PUBLIC_APP_URL` | Tùy chọn | URL công khai (dùng trong email) | `https://hrm.vierp.com` |
 | `SEED_ADMIN_PASSWORD` | Tùy chọn | Mật khẩu admin khi seed lần đầu | `MatKhauAdmin@Manh2026!` |
 
 ---
@@ -288,7 +288,7 @@ Nếu sử dụng Gmail làm SMTP server:
 2. Truy cập [https://myaccount.google.com/security](https://myaccount.google.com/security)
 3. Bật **Xác minh 2 bước** (2-Step Verification) nếu chưa bật
 4. Vào **App Passwords** (Mật khẩu ứng dụng)
-5. Chọn **Other (Custom name)** > nhập "RtR HRM" > nhấn **Generate**
+5. Chọn **Other (Custom name)** > nhập "VietERP HRM" > nhấn **Generate**
 6. Copy mật khẩu 16 ký tự > dán vào `SMTP_PASS` trong file `.env`
 
 ---
@@ -336,7 +336,7 @@ npm run seed:prod
 ```
 
 Lệnh seed sẽ tạo:
-- **Tài khoản Super Admin:** `admin@rtrobotics.com`
+- **Tài khoản Super Admin:** `admin@vierp.com`
 - **Cấu hình hệ thống:** ngày công chuẩn (26), mức giảm trừ cá nhân (11.000.000), giảm trừ người phụ thuộc (4.400.000), v.v.
 - **Phòng ban cốt lõi:** Kỹ Thuật (KT), Sản Xuất (SX), Hành Chính - Nhân Sự (HCNS), R&D (RND), Kinh Doanh (KD), Ban Giám Đốc (BGD)
 
@@ -430,7 +430,7 @@ Tạo file `/etc/nginx/sites-available/rtr-hrm`:
 ```nginx
 server {
     listen 80;
-    server_name hrm.rtrobotics.com;
+    server_name hrm.vierp.com;
 
     # Chuyển hướng HTTP sang HTTPS
     return 301 https://$server_name$request_uri;
@@ -438,11 +438,11 @@ server {
 
 server {
     listen 443 ssl http2;
-    server_name hrm.rtrobotics.com;
+    server_name hrm.vierp.com;
 
     # Chứng chỉ SSL (Let's Encrypt)
-    ssl_certificate /etc/letsencrypt/live/hrm.rtrobotics.com/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/hrm.rtrobotics.com/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/hrm.vierp.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/hrm.vierp.com/privkey.pem;
 
     # Cấu hình SSL
     ssl_protocols TLSv1.2 TLSv1.3;
@@ -506,7 +506,7 @@ sudo systemctl reload nginx
 
 ```bash
 sudo apt-get install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d hrm.rtrobotics.com
+sudo certbot --nginx -d hrm.vierp.com
 
 # Tự động gia hạn (certbot tự thêm cron, kiểm tra bằng):
 sudo certbot renew --dry-run
@@ -530,7 +530,7 @@ Thêm dòng sau:
 
 ```cron
 # Kiểm tra hợp đồng sắp hết hạn — chạy lúc 8:00 sáng mỗi ngày
-0 8 * * * curl -sf -H "x-cron-secret: GIA_TRI_CRON_SECRET_CUA_BAN" https://hrm.rtrobotics.com/api/cron/contract-expiry >> /var/log/rtr-hrm-cron.log 2>&1
+0 8 * * * curl -sf -H "x-cron-secret: GIA_TRI_CRON_SECRET_CUA_BAN" https://hrm.vierp.com/api/cron/contract-expiry >> /var/log/rtr-hrm-cron.log 2>&1
 ```
 
 > **Lưu ý:** Thay `GIA_TRI_CRON_SECRET_CUA_BAN` bằng giá trị thực của biến `CRON_SECRET` trong file `.env`.
@@ -553,7 +553,7 @@ Sau khi chạy `npm run seed:prod`, hệ thống tạo tài khoản Super Admin:
 
 | Thông tin | Giá trị |
 |-----------|---------|
-| Email | `admin@rtrobotics.com` |
+| Email | `admin@vierp.com` |
 | Mật khẩu | Giá trị của biến `SEED_ADMIN_PASSWORD`, hoặc mặc định `RTR@Admin2026!` |
 | Vai trò | `SUPER_ADMIN` (toàn quyền) |
 | Tên hiển thị | Admin RTR |
@@ -566,7 +566,7 @@ Sau khi chạy `npm run seed:prod`, hệ thống tạo tài khoản Super Admin:
 
 ### 11.1. Checklist ngay sau khi deploy
 
-- [ ] Đổi mật khẩu tài khoản `admin@rtrobotics.com`
+- [ ] Đổi mật khẩu tài khoản `admin@vierp.com`
 - [ ] Đảm bảo `NEXTAUTH_SECRET` là giá trị ngẫu nhiên mạnh (>= 32 ký tự), tạo bằng `openssl rand -base64 32`
 - [ ] Đảm bảo `CRON_SECRET` là giá trị ngẫu nhiên mạnh, tạo bằng `openssl rand -hex 32`
 - [ ] File `.env` chỉ có owner đọc được:
@@ -849,19 +849,19 @@ pm2 startup && pm2 save
 # 5. Nginx + SSL
 sudo nano /etc/nginx/sites-available/rtr-hrm   # Paste config từ mục 8
 sudo ln -s /etc/nginx/sites-available/rtr-hrm /etc/nginx/sites-enabled/
-sudo certbot --nginx -d hrm.rtrobotics.com
+sudo certbot --nginx -d hrm.vierp.com
 sudo systemctl reload nginx
 
 # 6. Cron jobs
 crontab -e
-# 0 8 * * * curl -sf -H "x-cron-secret: ..." https://hrm.rtrobotics.com/api/cron/contract-expiry >> /var/log/rtr-hrm-cron.log 2>&1
+# 0 8 * * * curl -sf -H "x-cron-secret: ..." https://hrm.vierp.com/api/cron/contract-expiry >> /var/log/rtr-hrm-cron.log 2>&1
 # 0 2 * * * /opt/rtr-hrm/backup.sh >> /var/log/rtr-hrm-backup.log 2>&1
 
-# 7. Đăng nhập admin@rtrobotics.com -> ĐỔI MẬT KHẨU NGAY
+# 7. Đăng nhập admin@vierp.com -> ĐỔI MẬT KHẨU NGAY
 ```
 
 ---
 
 > **Tài liệu được tạo ngày 14/03/2026.**
-> Phiên bản ứng dụng: RtR-HRM v0.1.0 | Next.js 14 | Prisma 7 | PostgreSQL 16+
+> Phiên bản ứng dụng: VietERP-HRM v0.1.0 | Next.js 14 | Prisma 7 | PostgreSQL 16+
 > Liên hệ đội phát triển nếu cần hỗ trợ thêm.

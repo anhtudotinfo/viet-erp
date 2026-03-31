@@ -18,7 +18,7 @@ export function Logo({ className, height = 32, width = 120, priority = false }: 
   return (
     <>
       <Image
-        src="/logo-rtrobotics-dark.png"
+        src="/logo-vierp-dark.png"
         alt="RTRobotics"
         width={width}
         height={height}
@@ -26,7 +26,7 @@ export function Logo({ className, height = 32, width = 120, priority = false }: 
         priority={priority}
       />
       <Image
-        src="/logo-rtrobotics.png"
+        src="/logo-vierp.png"
         alt="RTRobotics"
         width={width}
         height={height}
@@ -41,7 +41,7 @@ export function Logo({ className, height = 32, width = 120, priority = false }: 
 export function LogoLight({ className, height = 32, width = 120, priority = false }: LogoProps) {
   return (
     <Image
-      src="/logo-rtrobotics.png"
+      src="/logo-vierp.png"
       alt="RTRobotics"
       width={width}
       height={height}
@@ -55,7 +55,7 @@ export function LogoLight({ className, height = 32, width = 120, priority = fals
 export function LogoDark({ className, height = 32, width = 120, priority = false }: LogoProps) {
   return (
     <Image
-      src="/logo-rtrobotics-dark.png"
+      src="/logo-vierp-dark.png"
       alt="RTRobotics"
       width={width}
       height={height}

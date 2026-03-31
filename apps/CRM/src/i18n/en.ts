@@ -1,7 +1,7 @@
 const en = {
   // App Branding
-  'app.name': 'RtR CRM',
-  'app.company': 'Real-time Robotics',
+  'app.name': 'VietERP CRM',
+  'app.company': 'VietERP',
   'app.tagline': 'Defense-Grade Customer Relationship Management',
 
   // Navigation
