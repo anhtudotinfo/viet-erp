@@ -21,7 +21,7 @@ export default function CTASection() {
             </h2>
             <p className="text-[16px] md:text-[18px] text-text-secondary max-w-2xl mx-auto mb-10 leading-[1.7]">
               Mã nguồn mở, MIT License. Fork về, thay branding, deploy lên cloud.<br />
-              1.8 triệu dòng mã, 16 modules, 980 Prisma models — sẵn sàng production.
+              1.4 triệu dòng mã, 16 modules, 980 Prisma models — sẵn sàng production.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">

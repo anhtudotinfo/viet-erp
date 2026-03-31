@@ -59,7 +59,7 @@ export default function SocialProof() {
         <ScrollReveal delay={0.4} className="mt-20">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "1.8M+", label: "Dòng mã" },
+              { value: "1.4M+", label: "Dòng mã" },
               { value: "16", label: "Modules" },
               { value: "980", label: "Prisma Models" },
               { value: "723", label: "Test Files" },

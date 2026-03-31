@@ -16,7 +16,7 @@ VietERP Platform is a comprehensive, enterprise-grade ERP ecosystem built with m
 
 | Chỉ số / Metric | Giá trị / Value |
 |--------|-------|
-| Tổng dòng mã / Total LOC | **1,800,744** |
+| Tổng dòng mã / Total LOC | **1,431,780** (by `cloc`, excl. blanks + comments) |
 | Ứng dụng / Applications | 16 modules |
 | Gói chia sẻ / Shared Packages | 27 (`@vierp/*`) |
 | Prisma Models | 980 |
@@ -30,18 +30,20 @@ VietERP Platform is a comprehensive, enterprise-grade ERP ecosystem built with m
 
 ### Phân bổ mã nguồn / Code Breakdown
 
-| Ngôn ngữ / Language | LOC | Files | Ghi chú |
+Đếm bằng [`cloc`](https://github.com/AlDanial/cloc) — loại blank lines + comments.
+
+| Ngôn ngữ / Language | Code LOC | Files | Ghi chú |
 |---|---|---|---|
-| TypeScript (.ts) | 947,891 | 4,732 | Backend, services, API routes |
-| React TSX (.tsx) | 562,950 | 3,104 | Giao diện, components |
-| JavaScript (.js/.jsx) | 28,134 | 106 | Config + scripts |
-| CSS / Tailwind | 47,577 | 58 | Styles |
-| Prisma Schema | 36,830 | 15 | 980 models, 13 schemas |
-| JSON / YAML Config | 36,962 | 248 | Package configs + Helm + monitoring |
-| SQL Migrations | 17,462 | 51 | 34 migrations |
-| Markdown Docs | 112,827 | 281 | ADRs + guides + API refs |
-| Terraform (.tf) | 6,168 | 29 | AWS + GCP + Azure |
-| Shell Scripts | 3,943 | 26 | DevOps + automation |
+| TypeScript (.ts/.tsx) | 1,058,429 | 6,250 | Backend + Frontend |
+| JSON Config | 162,412 | 156 | Package configs + Helm |
+| Markdown Docs | 88,914 | 270 | ADRs + guides + API refs |
+| CSS / Tailwind | 36,695 | 56 | Styles |
+| Prisma Schema | 26,009 | 14 | 980 models |
+| YAML Config | 16,036 | 76 | CI/CD + monitoring |
+| JavaScript (.js/.jsx) | 20,309 | 110 | Config + scripts |
+| SQL Migrations | 9,584 | 43 | Database migrations |
+| Terraform (.tf) | 4,270 | 29 | AWS + GCP + Azure |
+| Shell Scripts | 2,843 | 26 | DevOps + automation |
 
 ## Độ hoàn thiện / Completion Status
 

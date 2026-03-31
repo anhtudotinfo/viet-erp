@@ -51,7 +51,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.55 }}
               className="text-[15px] md:text-[17px] text-text-secondary leading-[1.7] mb-6 md:mb-8 max-w-[480px]"
             >
-              16 modules ERP cho doanh nghiệp Việt Nam. Tuân thủ VAS TT200, hoá đơn điện tử NĐ123, BHXH/BHYT. 1.8 triệu dòng mã TypeScript.
+              16 modules ERP cho doanh nghiệp Việt Nam. Tuân thủ VAS TT200, hoá đơn điện tử NĐ123, BHXH/BHYT. 1.4 triệu dòng mã TypeScript.
             </motion.p>
 
             <motion.div
@@ -77,7 +77,7 @@ export default function Hero() {
             >
               {[
                 { value: "16", label: "Modules" },
-                { value: "1.8M+", label: "Dòng mã" },
+                { value: "1.4M+", label: "Dòng mã" },
                 { value: "980", label: "Models" },
               ].map((stat) => (
                 <div key={stat.label} className="flex items-baseline gap-1.5 md:gap-2">
